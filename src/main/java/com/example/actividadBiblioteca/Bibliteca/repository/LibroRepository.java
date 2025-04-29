@@ -12,4 +12,13 @@ public class LibroRepository {
     public List<Libro> obtenerLibros(){
         return listaLibros;
     }
+
+    public Libro buscarPorId(int id){
+        for (Libro lib : listaLibros ){
+            if (lib.getId() == id){
+                return lib;
+            }
+        }
+                return null;
+    }
 }

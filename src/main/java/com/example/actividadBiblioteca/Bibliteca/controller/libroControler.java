@@ -25,27 +25,27 @@ public class libroControler {
     @Autowired
     
     private LibroRepository libroService;
-    @GetMapping("path")
+    @GetMapping("/Listarlibros")
     public List<Libro> obtenerLibros(){
         return libroService.obtenerLibros();
     }
 
-    @PostMapping("path")
+    @PostMapping("/agregarLibro")
     public Libro agregarLibro(@RequestBody Libro libro){
         return libroService.agregarLibro(libro);
     }
 
-    @GetMapping({"path/{id}"})
+    @GetMapping({"/buscarPorId/{id}"})
     public Libro buscarPorId(@PathVariable int id){
         return libroService.buscarPorId(id);
     }
     
-    @DeleteMapping("path/{id}")
+    @DeleteMapping("/EliminarPorId/{id}")
     public void eliminarLibro(@PathVariable int id){
         libroService.eliminarLibro(id);
     }
 
-    @PutMapping("path/{id}")
+    @PutMapping("/actualizarLibro/{id}")
     public Libro actualizarLibro(@PathVariable int id, @RequestBody Libro libro){
         return libroService.actualizarLibro(libro);
     }
